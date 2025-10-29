@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa Cromático de Identidade</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    line-height: 1.7;
+  }
+
+  h1, h2 {
+    color: #333;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 0.3rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+  }
+
+  p {
+    color: #555;
+    max-width: 800px;
+    text-align: justify;
+  }
+
+  .section {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    max-width: 800px;
+  }
+
+  .slider-container {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  label {
+    font-weight: 600;
+    color: #444;
+  }
+
+  input[type=range] {
+    width: 100%;
+    accent-color: #0078ff;
+  }
+
+  #cor {
+    margin-top: 2rem;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .valor {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .exemplos {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+    max-width: 800px;
+  }
+
+  .exemplo {
+    margin-bottom: 0.8rem;
+  }
+
+  .cor-demo {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+  <h1>Mapa Cromático de Identidade</h1>
+  <p>
+    Este aplicativo representa visualmente a diversidade humana através da cor.  
+    Três dimensões — <b>orientação</b>, <b>sexo</b> e <b>performance</b> — são traduzidas em tonalidades, saturações e luminosidades vibrantes, criando uma <b>assinatura cromática pessoal</b>.  
+    A ideia é mostrar que cada pessoa tem uma combinação única e dinâmica, sem tons “certos” ou “errados”, apenas <b>expressões diferentes do mesmo espectro humano</b>.
+  </p>
+
+  <div class="section">
+    <h2>1. Orientação (Homo ↔ Hetero)</h2>
+    <p>
+      Refere-se à <b>direção da atração afetiva e sexual</b>.  
+      No espectro, “0%” representa atração por pessoas do mesmo gênero (homo), e “100%” representa atração por pessoas de outro gênero (hetero).  
+      A maioria das pessoas não está em um extremo fixo — pode haver atrações variadas ao longo da vida.
+    </p>
+    <p><b>Exemplos:</b></p>
+    <ul>
+      <li><b>20%</b> — um homem que sente mais atração por homens, mas pode ter interesse ocasional em mulheres.</li>
+      <li><b>50%</b> — alguém bissexual, atraído por mais de um gênero de forma semelhante.</li>
+      <li><b>80%</b> — uma mulher heterossexual que ocasionalmente se sente atraída por mulheres.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. Sexo (Homem ↔ Mulher)</h2>
+    <p>
+      Representa o <b>aspecto biológico</b> (características corporais e genéticas) que se associa culturalmente às noções de “masculino” e “feminino”.  
+      Aqui ele varia de 0% (homem) a 100% (mulher), mas sem excluir variações intermediárias e identidades intersexo ou não binárias.
+    </p>
+    <p><b>Exemplos:</b></p>
+    <ul>
+      <li><b>0%</b> — homem cisgênero.</li>
+      <li><b>50%</b> — pessoa não binária, que não se identifica completamente com um dos dois polos.</li>
+      <li><b>100%</b> — mulher cisgênero.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. Performance (Masculina ↔ Feminina)</h2>
+    <p>
+      Está ligada à forma como alguém <b>expressa gênero</b> — gestos, roupas, voz, postura e comportamento social.  
+      Não depende do sexo biológico ou da orientação.  
+      Alguém pode ser mulher com performance masculina, homem com performance feminina, ou algo entre esses extremos.
+    </p>
+    <p><b>Exemplos:</b></p>
+    <ul>
+      <li><b>15%</b> — um homem de expressão tradicionalmente masculina (como Dwayne “The Rock” Johnson).</li>
+      <li><b>50%</b> — pessoa equilibrando traços masculinos e femininos (como Harry Styles).</li>
+      <li><b>85%</b> — mulher com expressão delicada e gestualidade suave (como Emma Watson).</li>
+    </ul>
+  </div>
+
+  <div class="slider-container">
+    <div>
+      <label>Orientação (Homo ↔ Hetero)</label><br>
+      <input type="range" id="orientacao" min="0" max="100" value="50">
+      <div class="valor" id="v1">50%</div>
+    </div>
+
+    <div>
+      <label>Sexo (Homem ↔ Mulher)</label><br>
+      <input type="range" id="sexo" min="0" max="100" value="50">
+      <div class="valor" id="v2">50%</div>
+    </div>
+
+    <div>
+      <label>Performance (Masculina ↔ Feminina)</label><br>
+      <input type="range" id="performance" min="0" max="100" value="50">
+      <div class="valor" id="v3">50%</div>
+    </div>
+  </div>
+
+  <div id="cor">HSL(180, 80%, 60%)</div>
+
+  <h2>Exemplos de combinações e cores</h2>
+  <div class="exemplos">
+    <div class="exemplo">
+      <span class="cor-demo" style="background:hsl(0,80%,55%)"></span>
+      <b>Homem hetero de performance masculina:</b> tom vermelho vibrante, símbolo de energia e força.
+    </div>
+    <div class="exemplo">
+      <span class="cor-demo" style="background:hsl(300,80%,65%)"></span>
+      <b>Homem homo de performance feminina:</b> violeta rosado, associado à sensibilidade e liberdade de expressão.
+    </div>
+    <div class="exemplo">
+      <span class="cor-demo" style="background:hsl(200,90%,70%)"></span>
+      <b>Mulher hetero de performance feminina:</b> azul-claro, equilibrado e aberto.
+    </div>
+    <div class="exemplo">
+      <span class="cor-demo" style="background:hsl(120,85%,55%)"></span>
+      <b>Mulher homo de performance masculina:</b> verde intenso, remetendo à força e autenticidade.
+    </div>
+    <div class="exemplo">
+      <span class="cor-demo" style="background:hsl(50,90%,65%)"></span>
+      <b>Pessoa não binária com expressão intermediária:</b> amarelo dourado, centro do espectro — integração e equilíbrio.
+    </div>
+  </div>
+
+  <script>
+    const orientacao = document.getElementById('orientacao');
+    const sexo = document.getElementById('sexo');
+    const performance = document.getElementById('performance');
+    const corDiv = document.getElementById('cor');
+
+    const v1 = document.getElementById('v1');
+    const v2 = document.getElementById('v2');
+    const v3 = document.getElementById('v3');
+
+    function atualizarCor() {
+      const o = parseInt(orientacao.value);
+      const s = parseInt(sexo.value);
+      const p = parseInt(performance.value);
+
+      // Orientação → matiz (Hue)
+      const hue = Math.round((o / 100) * 360);
+
+      // Sexo → saturação
+      const saturation = 50 + (s / 2);
+
+      // Performance → luminosidade
+      const lightness = 45 + (p / 4);
+
+      const hsl = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+      corDiv.style.background = hsl;
+      corDiv.textContent = hsl;
+
+      v1.textContent = `${o}%`;
+      v2.textContent = `${s}%`;
+      v3.textContent = `${p}%`;
+    }
+
+    document.querySelectorAll('input[type=range]').forEach(slider => {
+      slider.addEventListener('input', atualizarCor);
+    });
+
+    atualizarCor();
+  </script>
+</body>
+</html>
